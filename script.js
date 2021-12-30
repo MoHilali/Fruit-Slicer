@@ -23,7 +23,7 @@ $(function() {
                trialsLeft = 3;
                addHearts();
 
-               //
+               //hide the game over div
                $("#gameover").hide();
 
                //change button text to reset game
@@ -47,10 +47,7 @@ $(function() {
           clearInterval(action);
 
           //hide fruit
-          $("#fruit1").hide("explode", 500); // slice fruit
-
-          //send new fruit
-          setTimeout(startAction, 500);
+          $("#fruit1").hide("explode", 500, startAction); // slice fruit and send new fruit (using jQuery callback)
      });
 
      //add hearts in the life bar
