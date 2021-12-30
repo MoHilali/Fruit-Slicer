@@ -37,6 +37,22 @@ $(function() {
 
      //functions
 
+     $("#fruit1").mouseover(function(){
+          score++;
+          $("#scoreValue").html(score);//update score
+
+          $("#slicesound")[0].play(); //play sound
+
+          //stop fruit
+          clearInterval(action);
+
+          //hide fruit
+          $("#fruit1").hide("explode", 500); // slice fruit
+
+          //send new fruit
+          setTimeout(startAction, 500);
+     });
+
      //add hearts in the life bar
      function addHearts() {
           $("#trialsLeft").empty();
@@ -113,15 +129,3 @@ $(function() {
      }
 
 });
-
-
-//click on start reset button
-
-//yes
-//reload page
-//no
-//show trials left
-//change button text to "reset game"
-//1. create a random fruint
-//define a random stem
-//2.move fruite down one step
